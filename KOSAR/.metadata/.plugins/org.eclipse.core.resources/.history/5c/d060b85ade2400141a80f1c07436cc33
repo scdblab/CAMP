@@ -1,0 +1,73 @@
+package com.mitrallc.webserver;
+
+import com.mitrallc.core.KosarCore;
+
+
+
+public class CoreSettingsPage extends BaseSettings{
+	public String GetOptions(int numreplicas, int SelectedOption){
+		String res="";
+		if (SelectedOption == 0) res += "<option value=\"0\" selected=\"selected\">No cooperation</option>";
+		else res += "<option value=\"0\">No cooperation</option>";
+		
+		for (int i=1; i < numreplicas+1; i++){
+			if (SelectedOption == i) res += "<option value=\""+i+"\" selected=\"selected\">Cooperate with "+i+" replica</option>";
+			else res += "<option value=\""+i+"\">Cooperate with "+i+" replica</option>";
+		}
+		if (SelectedOption == -1) res += "<option value=\"-1\" selected=\"selected\">Full cooperation</option>";
+		else res += "<option value=\"-1\">Full cooperation</option>";
+		return res;
+	}
+	
+	public void setReplicationString() {
+		
+		optionVal = Integer.toString(KosarCore.getNumReplicas());
+		System.out.println("optionval " + optionVal);
+		replicationString = "<tr><td><p>Degree of replication: <select name=\"cooperation\">"+
+//				"<option value=\"0\" selected=\"selected\">No cooperation</option>"+
+				GetOptions(KosarCore.clientToIPMap.size(), KosarCore.getNumReplicas())+
+//				"<option value=\"1\">Cooperate with 1 replica</option>"+
+//				"<option value=\"2\">Cooperate with 2 replicas</option>"+
+//				"<option value=\"-1\">Cooperate with  replicas</option>"+
+			"</select></p></td></tr>";
+		switch(optionVal){
+		case "0":
+			break;
+		case "1":replicationString = "<tr><td><p>Degree of replication: <select name=\"cooperation\">"+
+				"<option value=\"0\">No cooperation</option>"+
+				"<option value=\"1\" selected=\"selected\">Cooperate with 1 replica</option>"+
+				"<option value=\"2\">Cooperate with 2 replicas</option>"+
+				"<option value=\"-1\">Cooperate with N replicas</option>"+
+			"</select></p></td></tr>";
+			break;
+		case "2":replicationString = "<tr><td><p>Degree of replication: <select name=\"cooperation\">"+
+				"<option value=\"0\">No cooperation</option>"+
+				"<option value=\"1\">Cooperate with 1 replica</option>"+
+				"<option value=\"2\" selected=\"selected\">Cooperate with 2 replicas</option>"+
+				"<option value=\"-1\">Cooperate with N replicas</option>"+
+			"</select></p></td></tr>";
+			break;
+		case "-1":replicationString = "<tr><td><p>Degree of replication: <select name=\"cooperation\">"+
+				"<option value=\"0\">No cooperation</option>"+
+				"<option value=\"1\">Cooperate with 1 replica</option>"+
+				"<option value=\"2\">Cooperate with 2 replicas</option>"+
+				"<option value=\"-1\" selected=\"selected\">Cooperate with N replicas</option>"+
+			"</select></p></td></tr>";
+			break;
+		default:
+			System.out.println("default " + optionVal);
+			replicationString = "<tr><td><p>Degree of replication: <select name=\"cooperation\">"+
+				"<option value=\"\" selected=\"selected\">Cooperate with " + optionVal + " replicas</option>"+
+				"<option value=\"0\">No cooperation</option>"+
+				"<option value=\"1\">Cooperate with 1 replica</option>"+
+				"<option value=\"2\">Cooperate with 2 replicas</option>"+
+				"<option value=\"-1\">Cooperate with N replicas</option>"+
+			"</select></p></td></tr>";
+			break;
+		}
+	}
+	public void setNumReplicas(int numReplicas) {
+		KosarCore.setNumReplicas(numReplicas);
+	}
+	
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/BG/src/edu/usc/bg/FunctionCommandLine.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="edu.usc.bg.FunctionCommandLine"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-db hibernate.HibernateBgClient -p db.url=jdbc:mysql://10.0.0.212:3306/hibernatebgclient  -p db.url=&quot;jdbc:oracle:thin:@localhost:1521:orcl&quot; -p db.dialect=&quot;org.hibernate.dialect.OracleDialect&quot; -p db.driver=&quot;oracle.jdbc.OracleDriver&quot; -p db.user=&quot;root&quot; -p db.passwd=&quot;root&quot; -p db.fspath=&quot;C:\Users\Ankit\Documents\BG&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="BG"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx10G"/>
+</launchConfiguration>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project BG_KOSAR">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="C:/Users/shahram/Documents/workspace/BG_KOSAR/BG.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="edu.usc.bg.BGMainClass"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="C:/Users/shahram/Documents/workspace/BG_KOSAR/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Users/shahram/Documents/workspace/BG_KOSAR/lib/slf4j-simple-1.5.6.jar"/>
+            <fileset dir="C:/Users/shahram/Documents/workspace/BG_KOSAR/lib"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Users/shahram/Documents/workspace/BG_KOSAR/lib/kosarjdbc.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Users/shahram/Documents/workspace/BG_KOSAR/lib/mysql-connector-java-5.1.18-bin.jar"/>
+        </jar>
+    </target>
+</project>

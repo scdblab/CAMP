@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/BG_KOSAR/src/edu/usc/bg/BGMainClass.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="edu.usc.bg.BGMainClass"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="onetime -schema -db relational.Basic1R1TMySQLClient -p db.user=cosar -p db.passwd=gocosar -p insertimage=false -p db.url=jdbc:mysql://127.0.0.1:3306/bgbench1 -p db.driver=com.mysql.jdbc.Driver -p dbtype=mysql -p loadmode=actualload -p numclients=1"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="BG_KOSAR"/>
+</launchConfiguration>

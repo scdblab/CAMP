@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/BG_KOSAR/src/edu/usc/bg/FunctionCommandLine.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="edu.usc.bg.FunctionCommandLine"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-db relational.JdbcDBClient -p db.url=kosarsolo:jdbc:oracle:thin:cosar/gocosar@//10.0.0.195:1521/ORCL -p db.user=cosar -p db.passwd=gocosar -p db.driver=com.mitrallc.sql.KosarSoloDriver"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="BG_KOSAR"/>
+</launchConfiguration>

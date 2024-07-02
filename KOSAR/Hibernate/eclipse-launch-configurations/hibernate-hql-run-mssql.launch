@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/BG/src/edu/usc/bg/BGMainClass.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="edu.usc.bg.BGMainClass"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="onetime -t -s -db hibernate.HibernateBgClientWithHQL -P workloads/populateDB -P workloads/SymmetricHighUpdateActions -p initapproach=deterministic -p numloadthreads=100 -p threadcount=5 -p insertImage=true -p imagesize=12 -p maxexecutiontime=300  -p db.url=&quot;jdbc:sqlserver://localhost:1433;databaseName=hibernatebgclient;&quot; -p db.dialect=&quot;org.hibernate.dialect.SQLServerDialect&quot; -p db.driver=&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot; -p db.user=&quot;root&quot; -p db.passwd=&quot;root&quot; -p db.fspath=&quot;C:\Users\Ankit\Documents\BG&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="BG"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx10G"/>
+</launchConfiguration>

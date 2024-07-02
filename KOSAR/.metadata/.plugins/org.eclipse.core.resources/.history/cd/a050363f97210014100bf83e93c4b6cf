@@ -1,0 +1,243 @@
+package com.mitrallc.webserver;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Vector;
+import java.util.concurrent.ConcurrentHashMap;
+import java.net.URLDecoder;
+
+
+import com.mitrallc.kosar.kosar;
+import com.mitrallc.sql.KosarSoloDriver;
+import com.mitrallc.sqltrig.QTmeta;
+import com.sun.net.httpserver.*;
+
+public class MyHttpHandler extends BaseHttpHandler {
+	boolean verbose = false;
+	Setting setting =new Setting();
+
+	private HashMap<String,String> ProcessRequestHdrBody(HttpExchange exch) {
+		Vector queryselected = new Vector( );
+		byte buf[] = null;
+		String requestMethod = exch.getRequestMethod();
+		HashMap<String, String> disabledqts = null;
+
+		if (requestMethod.equalsIgnoreCase("POST")) {//if2
+			Headers requestHeaders = exch.getRequestHeaders();		
+			Set<String> keySet = requestHeaders.keySet();
+			Iterator<String> iter = keySet.iterator();
+
+			if (verbose){
+				//Print the content of the request header
+				while (iter.hasNext()){
+					String key = iter.next();
+					List values = requestHeaders.get(key);
+					System.out.println(""+key+"="+values.toString());
+				}
+			}
+
+			String qry=null;
+			InputStream in = exch.getRequestBody();
+			try {
+				ByteArrayOutputStream out = new ByteArrayOutputStream();
+				buf = new byte[4096];
+				for (int n = in.read(buf); n > 0; n = in.read(buf)) {
+					out.write(buf, 0, n);
+				}
+				qry = new String(out.toByteArray()); 
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				try {
+					in.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if (verbose) System.out.println(qry);
+
+			disabledqts = new HashMap<String,String>();
+			String defs[] = qry.split("[&]");
+			for (String def: defs) {
+				def = DecodeQueries(def);
+				int ix = def.lastIndexOf("=");
+				String name;
+				String value;
+				if (ix < 0) {
+					name = def;
+					value = "";
+				} else {
+					name = def.substring(0, ix);
+					value = def.substring(ix+1);
+				}
+				//Identify the disabled query templates in a hash table
+				disabledqts.put(name, value);
+
+				if (verbose) System.out.println(""+name+" = "+value);
+			}
+		}
+		return disabledqts;
+	}
+
+
+	public void handle(HttpExchange exch) throws IOException {
+		String output;
+		URI uri = exch.getRequestURI();
+		if(verbose) {
+			System.out.println("Got connection.");
+			System.out.println(uri.toString());
+		}
+		String response = "Path: " + uri.getPath() + "\n";
+		HashMap<String,String> PageNameValue = ProcessRequestHdrBody(exch);
+		switch (uri.getPath()){
+		case "/":
+			mainpage main=new mainpage();
+			main.setName(name);
+			output = main.content();
+			break;
+		case "/Triggers":
+			Triggers triggers=new Triggers();
+			triggers.setName(name);
+			output = triggers.content();
+			break;
+		case "/SQL":
+			SQL sql=new SQL();
+			sql.setName(name);
+			output = sql.content();
+			break;
+		case "/Cached":
+			cachedStatic cached=new cachedStatic();
+			cached.setName(name);
+			adjustCachedStatic(PageNameValue);
+			output = cached.content();
+			break;
+		case "/Setting":
+			setting.setName(name);
+			adjustRefreshedSettings(setting, PageNameValue);
+			output = setting.content();
+
+			break;
+		case "/LastQueries":
+			LastQueries lastQ=new LastQueries();
+			lastQ.setName(name);
+			output = lastQ.content();
+
+			break;
+		case "/LastIDU":
+			LastIDU lastidu=new LastIDU();
+			lastidu.setName(name);
+			output = lastidu.content();
+			break;
+		default:
+			mainpage emp=new mainpage();
+			emp.setName(name);
+			output = emp.content();
+			break;
+		}
+		Headers responseHeaders = exch.getResponseHeaders();
+		responseHeaders.set("Content-Type", "text/html");	
+		exch.sendResponseHeaders(200, output.length());
+		OutputStream os = exch.getResponseBody();
+		byte[] buffer = output.getBytes();
+		if (buffer.length > 0) {
+			os.write(buffer);
+		}
+		os.close();
+	}
+
+	private String DecodeQueries(String inval){
+		String result = inval.replace("%28", "(");
+		result = result.replace("%29", ")");
+		result = result.replace("+", " ");
+		result = result.replace("%3D", "=");
+		result = result.replace("%2C", ",");
+		result = result.replace("%3F", "?");
+		return result.trim();
+	}
+
+	private void adjustCachedStatic(HashMap<String,String> PageNameValue) {
+		//Nothing to process
+		if (PageNameValue == null) return;
+		com.mitrallc.sqltrig.QueryToTrigger.UpdateTriggerCache(PageNameValue);
+
+	}
+	private void adjustRefreshedSettings(Setting setting, HashMap PageNameValue) {
+		//Nothing to process
+		if (PageNameValue == null) return;
+
+		int refreshRate=-1;
+		int swhitRate=-1;
+		int rphitrate=-1;
+		String boxValue="";
+		String KosarValue="";
+		
+		//Iterate over the PageNameValue HashMap to process its elements
+		Iterator<String> keys = PageNameValue.keySet().iterator();
+
+
+
+		while(keys.hasNext()) { 
+			String name = keys.next(); 
+			String value = PageNameValue.get(name).toString();
+
+			switch (name) {
+			case "kosarOnOff":
+				setting.setKosarOnOff(value);
+				break;
+			case "kvsFlush":
+				//Turn KOSAR off and reset the data structures
+				KosarSoloDriver.kosarEnabled = false;
+				kosar.clearCache();
+				KosarSoloDriver.kosarEnabled = true;
+				break;
+			case "refresh":
+				refreshRate = Integer.parseInt(value);
+				setting.setRefreshVal(refreshRate);
+				break;
+//			case "sw-hitrate":
+//				swhitRate = Integer.parseInt(value);
+//				setting.setSlidingWindowVal(swhitRate);
+//				break;
+			case "rp-hitrate":
+				rphitrate = Integer.parseInt(value);
+				setting.setGranularity(rphitrate);
+				break;
+			case "boxBytes":
+				boxValue="Bytes";
+				setting.setBox(boxValue);
+				break;
+			case "boxKBytes":
+				boxValue="KBytes";
+				setting.setBox(boxValue);
+				break;
+			case "boxMBytes":
+				boxValue="MBytes";
+				setting.setBox(boxValue);
+				break;
+			case "boxGBytes":
+				boxValue="GBytes";
+				setting.setBox(boxValue);
+				break;
+			default:
+				System.out.println("Error, case is unknown.");
+				break;
+			}
+
+			if(verbose) System.out.println(""+name+" = "+value);
+		}
+	}
+}

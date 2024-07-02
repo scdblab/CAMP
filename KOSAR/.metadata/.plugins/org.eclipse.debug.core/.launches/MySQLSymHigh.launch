@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/BG_KOSAR/src/edu/usc/bg/BGMainClass.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="edu.usc.bg.BGMainClass"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="onetime -t -s -db relational.AggrAsAttr1R1TMySQLClient -P C:\Users\shahram\Documents\ws\BG_KOSAR\workloads\SymmetricHighUpdateActions -P C:\Users\shahram\Documents\ws\BG_KOSAR\workloads\populateDB_100 -p db.user=cosar -p exportfile=DistrStats  -p insertimage=false -p warmupthreads=1 -p requestdistribution=dzipfian  -p expectedlatency=0.1  -p thinktime=0 -p warmup=100 -p zipfianmean=0.27 -p db.passwd=gocosar -p numloadthreads=1 -p initapproach=deterministic  -p db.url=kosarsolo:jdbc:mysql://10.0.0.175:3306/bgbench1 -p db.driver=com.mitrallc.sql.KosarSoloDriver -p ratingmode=false -p useroffset=0 -p machineid=0 -p resourcecountperuser=0 -p friendcountperuser=10 -p confperc=1 -p threadcount=1 -p numclients=1 -p maxexecutiontime=30"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="BG_KOSAR"/>
+</launchConfiguration>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;KVSJDBC/kosar.cfg&apos; to &apos;kosarMySQL.cfg&apos;" description="Rename resource &apos;kosar.cfg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="kosar.cfg" name="kosarMySQL.cfg" stamp="1408147191964" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;KVSJDBC/kosarOracle.cfg&apos; to &apos;kosar.cfg&apos;" description="Rename resource &apos;kosarOracle.cfg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="kosarOracle.cfg" name="kosar.cfg" stamp="1408147204363" updateReferences="true"/>
+</session>

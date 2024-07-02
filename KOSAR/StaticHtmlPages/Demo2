@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+	<title>Kosar</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="shortcut icon" href="css/images/favicon.ico" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.fullscreener.js"></script>
+	<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+<body>
+<div class="head-section">
+	<h1 class="logo"><a href="#">KOSAR</a></h1><!-- /.logo -->
+
+	<div class="shell">
+		<div class="navigation">
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="Demo.html">Demo</a></li>
+				<li><a href="home.html">White Papers</a></li>
+				<li><a href="home.html">Download</a></li>
+				<li><a href="contact.html" >Contact</a></li>
+				<li><a href="about.html">About Us</a></li>
+			</ul>
+		</div><!-- /.navigation -->
+		<div class="head-content">
+		</div><!-- /.head-content -->
+	</div><!-- /.shell -->
+
+	<div class="section-bg">
+		<img src="css/images/section-bg2.jpg" alt="" width="1280" height="200" />
+	</div><!-- /.section-bg -->
+</div><!-- /.head-section -->
+
+<div class="section-info-bio">
+	<div class="shell">
+	<div class="firsttext-wrapper">
+	<div class="text-content-demo">
+				<h1>Live Demo</h1>
+				<p class="justify">This <a href="#" target="_blank">link</a> is a live demonstration of KOSAR with MySQL and a
+<a href="http://www.bgbenchmark.org">social networking benchmark</a>
+that emulates 300 simultanoues users performing
+interactive social networking actions such as view a member
+profile, invite a member to be friends, accept a pending friend
+invitation, list friends, and others.</p>
+			</div><!-- /.text-content-demo -->
+			</div><!--/firsttext-wrapper-->
+			<div class="Demo-questionsimg">
+				<h3 id="head1">Why should I care?</h3>
+								<div class="text-wrapper-demo">
+									<div class="text-content-demo">
+				<p class="justify" >The <strong>Performance Metrics</strong> tab shows the number of queries processed
+by KOSAR per unit of time.
+This page is shown to the left;
+the circled area highlights the number of queries processed
+per unit of time.
+One may turn KOSAR and off (using the <strong>Setting</strong> tab of the live demo)
+to see what happens.
+When KOSAR is turned on, the system can process a large number of
+queries per unit of time.  Once KOSAR is turned off, performance
+diminishes greately.</p>
+									</div><!-- /.text-content-demo -->
+								</div><!--text-wrapper-demo-->
+				<div class="text-wrapper-demo">
+					<div class="text-content-demo">
+						<h3>What else can I do?</h3>
+				<p class="justify">The KOSAR interface enables its users to see the query templates that
+are cached, see the <strong>Cached Queries</strong> tab of the live demo.
+KOSAR is caching instance of those templates with unselected radio
+buttons. 
+By selecting the radio button of a query template and clicking Submit,
+the user notifies KOSAR to stop caching instances of the selected
+template.
+Double clicking a selected query template turns its radio
+button off.
+By clicking Submit, caching of query instances of the template is
+re-enabled. </p>
+					</div><!-- /.text-content-demo -->
+				</div><!--/text-wrapper-text-->
+				<div class="text-wrapper-demo">
+					<div class="text-content-demo">
+							<h3>Is there more?</h3>
+				<p class="justify">Yes, one may also preview the application's last 100 SQL queries
+by navigating to the <strong>Last 100 Queries</strong> tab of the interface.
+The <strong>Last 100 Insert/Delete/Update</strong> tab shows the update commands
+issued by the application.  KOSAR caches the result of SQL
+queries.  SQL Insert/Delete/Update command invalidate the
+impacted cached query results.  </p>
+<br>
+<p class="justify">Finally, the <strong>SQL Stats</strong> tab shows the statistics of the different query
+templates such as their cache hit rate and their frequency.  A query
+template with a higher frequency constitutes a larger portion of the
+system workload</p>
+			</div><!-- /.text-content -demo-->
+			</div><!--/text-wrapper-demo-->
+			<div class="text-content-demo">
+				<h3>Is this the complete interface of KOSAR?</h3>
+				<p>No, this demo is showcasing the client interface of KOSAR.
+An application may consist of tens of clients (e.g., Web Servers)
+and each may employ KOSAR to enhance performance.
+Each client will have an interface similar to the live demo.
+These clients are coordinated using KOSAR Core. 
+KOSAR CORE has a similar interface that is not demonstrated here.</p>
+			</div><!-- /.text-content -demo-->
+			</div><!--/firsttext-wrapper-->
+			</div><!--Demo-questionsimg-->
+		 	</div><!-- /.shell -->
+</div><!-- /.section-text -->
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+DATE: 2014/08/24 04:54:10
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0.05
+db.driver: com.mitrallc.sql.KosarSoloDriver
+ratingmode: false
+thinktime: 0
+numclients: 1
+expectedlatency: 0.1
+DeleteCommentOnResourceAction: 0
+InviteFrdSession: 0
+ViewTopKResourcesAction: 0.4
+initialfriendsperuser: 10
+initialresourcesperuser: 0
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0.0
+operationcount: 0
+db: hibernate.HibernateBgClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0.0
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+machineid: 0
+ViewProfileAction: 0.4
+threadcount: 1
+InviteFriendAction: 0.0
+resourcecountperuser: 0
+ViewCommentsOnResourceAction: 0.1
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: 0
+ThawFriendshipAction: 0.0
+numloadthreads: 1
+ViewNewsFeedAction: 0
+ListFriendsAction: 0.05
+db.passwd: gocosar
+exportfile: DistrStats
+AcceptFrdReqSession: 0
+warmup: 10000
+userworkload: edu.usc.bg.workloads.UserWorkload
+usercount: 100
+ViewSelfProfileSession: 0
+db.user: cosar
+db.url: kosarsolo:jdbc:mysql://127.0.0.1:3306/hibernatebg
+ViewFrdProfileSession: 0
+insertimage: false
+warmupthreads: 10
+PostCmtOnResSession: 0
+initialmembercount: 100
+confperc: 1
+maxexecutiontime: 200
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=100 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=0
+[OVERALL], RunTime(ms), 200003.0
+[OVERALL], opcount(sessions), 157812
+[OVERALL], Throughput(sessions/sec), 789.0481642775359
+[OVERALL], actcount(actions), 142234
+[OVERALL], Throughput(actions/sec), 711.1593326100109
+[UntilFirstThreadsDeath], RunTime(ms), 200003.0
+[UntilFirstThreadsDeath], opcount(sessions), 157812.0
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 789.0481642775359
+[UntilFirstThreadsDeath], opcount(actions), 142234.0
+[UntilFirstThreadsDeath], Throughput(actions/sec), 711.1593326100109
+[OVERALL], Read(ops), 0.0
+[OVERALL], StaleRead(ops), 0.0
+[OVERALL], Staleness(staleReads/totalReads), NaN
+[OVERALL], Read(sessions), 0.0
+[OVERALL], StaleRead(sessions), 0.0
+[OVERALL], Staleness(staleSessions/totalSessions), NaN
+[OVERALL], Pruned(ops), 0.0
+[OVERALL], Validationtime(ms), 0.0
+[OVERALL], DumpAndValidationtime(ms), 0.0
+[OVERALL], dumpFilesToDB (ms), 0.0
+[FRIENDS]NumOperations=7864, AverageResponseTime(us)=5160.05, MinResponseTime(us)=2451, MaxResponseTime(us)=17078
+ReturnCode:0 numObserved:7864
+[PROFILE]NumOperations=63047, AverageResponseTime(us)=1552.82, MinResponseTime(us)=613, MaxResponseTime(us)=5732
+ReturnCode:0 numObserved:63047
+[PENDING]NumOperations=7872, AverageResponseTime(us)=856.35, MinResponseTime(us)=460, MaxResponseTime(us)=4890
+ReturnCode:0 numObserved:7872
+[GETTOPRES]NumOperations=63451, AverageResponseTime(us)=840.08, MinResponseTime(us)=338, MaxResponseTime(us)=3654
+ReturnCode:0 numObserved:63451
+
+0 ,16832
+1 ,10427
+2 ,7659
+3 ,6431
+4 ,5302
+5 ,4768
+6 ,4185
+7 ,3797
+8 ,3464
+9 ,3234
+10 ,3077
+11 ,2773
+12 ,2628
+13 ,2473
+14 ,2322
+15 ,2207
+16 ,2267
+17 ,2083
+18 ,2022
+19 ,1914
+20 ,1979
+21 ,1781
+22 ,1770
+23 ,1804
+24 ,1652
+25 ,1642
+26 ,1538
+27 ,1521
+28 ,1523
+29 ,1457
+30 ,1470
+31 ,1393
+32 ,1321
+33 ,1380
+34 ,1339
+35 ,1296
+36 ,1225
+37 ,1212
+38 ,1219
+39 ,1167
+40 ,1180
+41 ,1130
+42 ,1168
+43 ,1111
+44 ,1096
+45 ,1068
+46 ,1052
+47 ,938
+48 ,1023
+49 ,1031
+50 ,1036
+51 ,1022
+52 ,988
+53 ,971
+54 ,948
+55 ,924
+56 ,1005
+57 ,913
+58 ,917
+59 ,894
+60 ,873
+61 ,865
+62 ,879
+63 ,831
+64 ,762
+65 ,841
+66 ,795
+67 ,792
+68 ,814
+69 ,816
+70 ,782
+71 ,753
+72 ,755
+73 ,744
+74 ,803
+75 ,769
+76 ,717
+77 ,728
+78 ,676
+79 ,696
+80 ,728
+81 ,683
+82 ,731
+83 ,653
+84 ,655
+85 ,719
+86 ,678
+87 ,697
+88 ,665
+89 ,694
+90 ,650
+91 ,666
+92 ,665
+93 ,604
+94 ,646
+95 ,636
+96 ,635
+97 ,609
+98 ,619
+99 ,599
+

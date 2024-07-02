@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/KVSJDBC/src/com/mitrallc/UnitTest/TestConnection.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.mitrallc.UnitTest.TestConnection"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="com.mitrallc.sql.KosarSoloDriver kosarsolo:jdbc:mysql://10.0.0.175:3306/bgbench1 cosar gocosar"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="KVSJDBC"/>
+</launchConfiguration>

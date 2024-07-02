@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+	<title>Kosar</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="shortcut icon" href="css/images/favicon.ico" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.fullscreener.js"></script>
+	<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/more-functions3.js"></script>
+</head>
+<body>
+<div class="head-section">
+	<h1 class="logo"><a href="home.html">KOSAR</a></h1><!-- /.logo -->
+
+	<div class="shell">
+		<div class="navigation">
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="FAQ.html">FAQ</a></li>
+				<li><a href="Demo.html">Demo</a></li>
+				<li><a href="White-papers.html">White Papers</a></li>
+				<li><a href="Download.html">Download</a></li>
+				<li><a href="contact.html" >Contact</a></li>
+				<li><a href="about.html">About Us</a></li>
+			</ul>
+		</div><!-- /.navigation -->
+		<div class="head-content">
+			
+		</div><!-- /.head-content -->
+	</div><!-- /.shell -->
+
+	<div class="section-bg">
+		<img src="css/images/section-bg2.jpg" alt="" width="1280" height="200" />
+	</div><!-- /.section-bg -->
+</div><!-- /.head-section -->
+
+<div class="section-info-bio">
+	<div class="shell">
+	<div class="text-content-wpaper">
+		 <h1>Frequently Asked Questions</h1>
+		 <div class="questionsimg">  
+				<img src="css/images/text-plus.png" id="right1" class="arrow"/>
+				<img src="css/images/text-minus.png" class="arrow hidden" id="down1"/>
+				<a id="Q1" class="h3-img">How is KOSAR different than memcached and other caching solutions?</a>
+		</div>
+				<p id="A1" class="hidden">KOSAR is different in that it reduces the complexity of the application software
+to empower software developers to focus on the requirements of the application.
+With memcached and other caching solutions, software engineers must manage
+idiosyncrasies of using the cache and provide software to address questions such as: 
+How to maintain the cache consistent?
+What to do with undesirable race conditions?  
+How to manage the software architecture with memcached client component? etc.
+This software must be designed, developed, debugged, tested, deployed, and maintained over time.  
+KOSAR eliminates this overhead all together.</p>
+<div class="questionsimg">
+				<img src="css/images/text-plus.png" id="right2" class="arrow"/>
+				<img src="css/images/text-minus.png" class="hidden arrow" id="down2" />
+		 <a id="Q2" class="h3-img"> What is the advantage of using KOSAR when compared with memcached?</a>
+		</div>
+		 <p id="A2" class="hidden">KOSAR is faster to deploy and reduces the complexity of application software.
+It enhances the productivity of software developers by empowering them to focus on
+the requirements of their application.  KOSAR provides a higher performance than
+memcached because it employs an intelligent memory management technique (CAMP).</p>
+		 
+		 <div class="questionsimg">  
+				<img src="css/images/text-plus.png" id="right3" class="arrow"/>
+				<img src="css/images/text-minus.png" class="arrow hidden" id="down3"/>
+				<a id="Q3" class="h3-img">Do I have to change my application software to use KOSAR?</a>
+		</div>
+				<p id="A3" class="hidden">No; KOSAR is a transparent caching solution.  This means it requires no change to the application software.  One simply replaces an existing RDBMS client component (such as a JDBC jar file) with KOSAR and the application is ready to be launched.</p>
+		 <div class="questionsimg">
+				<img src="css/images/text-plus.png" id="right4" class="arrow"/>
+				<img src="css/images/text-minus.png" class="hidden arrow" id="down4" />
+		 <a id="Q4" class="h3-img">Do I have to re-design my database to use KOSAR?</a>
+		</div>
+		 <p id="A4" class="hidden">NO;  same response as the question on whether the application software must change.</p>
+		 <div class="questionsimg">
+				<img src="css/images/text-plus.png" id="right5" class="arrow"/>
+				<img src="css/images/text-minus.png" class="hidden arrow" id="down5" />
+		 <a id="Q5" class="h3-img">What does KOSAR cache?</a></div>
+		 <p id="A5" class="hidden">KOSAR caches a SQL query instance and its result set.  An application may issue millions and billions of cached query instances and KOSAR manages these intelligently while providing strong consistency.</p>
+		 <div class="questionsimg">
+				<img src="css/images/text-plus.png" id="right6" class="arrow"/>
+				<img src="css/images/text-minus.png" class="hidden arrow" id="down6" />
+		 <a id="Q6" class="h3-img">Does KOSAR use the concept of Time To Live (TTL) for the cached entries?</a></div>
+		  <p id="A6" class="hidden">No.  KOSAR detects when the result of a cached query instance has changed in a transaction manner, avoiding the use of techniques such as TTL.</p>
+		 <div class="questionsimg">
+				<img src="css/images/text-plus.png" id="right7" class="arrow"/>
+				<img src="css/images/text-minus.png" class="hidden arrow" id="down7" />
+				<a id="Q7" class="h3-img">What RDBMSs are supported? </a></div>
+		  <p id="A7" class="hidden">KOSAR functions with almost all SQL systems such as Oracle, MySQL, Microsoft SQL Server, IBM DB2, PostgreSQL, and others.</p>
+		 <div class="questionsimg">
+				<img src="css/images/text-plus.png" id="right8" class="arrow"/>
+				<img src="css/images/text-minus.png" class="hidden arrow" id="down8" />
+				<a id="Q8" class="h3-img">Does KOSAR work with an ORM such as Hibernate?</a></div>
+		  <p id="A8" class="hidden">Yes.  Its deployment is as trivial as replacing the existing driver name in the cfg file with KOSAR's driver name and restarting the application.</p>
+		 <div class="questionsimg">
+				<img src="css/images/text-plus.png" id="right9" class="arrow"/>
+				<img src="css/images/text-minus.png" class="hidden arrow" id="down9" />
+				<a id="Q9" class="h3-img">Does KOSAR support the transaction guarantees of the RDBMS?</a></div>
+		  <p id="A9" class="hidden">Yes, as long as the underlying RDBMS is configured to provide transactional guarantees, KOSAR preserves these guarantees.  For example, with MySQL 5.6, tables must be identified as transactional at creation time.  Once this is done, KOSAR preserves the transactional properties of MySQL.</p>
+		 <div class="questionsimg">
+				<img src="css/images/text-plus.png" id="right10" class="arrow"/>
+				<img src="css/images/text-minus.png" class="hidden arrow" id="down10" />
+				<a id="Q10" class="h3-img">How does one check to see if KOSAR is operational?</a></div>
+		  <p id="A10" class="hidden">KOSAR has a built-in web server that supports a monitoring tool.  Visit the Demo tab and click on the Live Demo hyperlink.  Using the monitoring tool, one may turn KOSAR on and off in real time.  Moreover, one may identify the application's query templates cached by KOSAR.</p>
+		  <div class="questionsimg">
+				<img src="css/images/text-plus.png" id="right11" class="arrow"/>
+				<img src="css/images/text-minus.png" class="hidden arrow" id="down11" />
+				<a id="Q11" class="h3-img">What is the difference between a query template and a query instance?</a></div>
+		  <p id="A11" class="hidden">The where clause of a query identifies it either as a query instance or a query template.  A query template uses wildcards while a query instance uses values.  For example, the where clause of a query instance might be Member.userid=5.  The query template for this instance would be Member.userid=?.  An application may issue millions and billions of unique query instances for a given query template.</p>
+		  <div class="questionsimg">
+				<img src="css/images/text-plus.png" id="right12" class="arrow"/>
+				<img src="css/images/text-minus.png" class="hidden arrow" id="down12" />
+		  <a id="Q12" class="h3-img">Why is the distinction between a query template and a query instance important?</a></div>
+		  <p id="A12" class="hidden">KOSAR enables an administrator to use its monitoring tool to disable caching either at the granularity of a query template or a query instance.</p>
+		  <div class="questionsimg">
+				<img src="css/images/text-plus.png" id="right13" class="arrow"/>
+				<img src="css/images/text-minus.png" class="hidden arrow" id="down13" />
+				<a id="Q13" class="h3-img">If I disable the caching of a query template, does it stop caching instances of the query template?</a></div>
+		  <p id="A13" class="hidden">Yes.</p>
+		  <div class="questionsimg">
+				<img src="css/images/text-plus.png" id="right14" class="arrow"/>
+				<img src="css/images/text-minus.png" class="hidden arrow" id="down14" />
+				<a id="Q14" class="h3-img">If I disable the caching of a query template, does KOSAR delete its cached instances?</a></div>
+		  <p id="A14" class="hidden">No.  These instances are maintained up to date and used once the caching of the query template is re-enabled.  To delete these instances, press the flush button for the query template.</p>
+		 
+	</div><!--text-content-->
+	</div><!-- /.shell -->
+</div><!-- /.section-text -->
+</body>
+</html>

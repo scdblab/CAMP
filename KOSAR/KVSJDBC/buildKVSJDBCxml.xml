@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project KVSJDBC">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="C:/Users/shahram/Documents/workspace/BG_KOSAR/lib/kosarjdbc.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="com.mitrallc.UnitTest.KosarSoloClient"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="C:/Users/shahram/Documents/workspace/KVSJDBC/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Users/shahram/Documents/workspace/KVSJDBC/lib/jsqlparser.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Users/shahram/Documents/workspace/KVSJDBC/lib/jsqlparser-0.8.6.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Users/shahram/Documents/workspace/KVSJDBC/lib/log4j-1.2.15.jar"/>
+            <fileset dir="C:/Users/shahram/Documents/workspace/KosarWebserver/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Users/shahram/Documents/workspace/KVSJDBC/lib/mysql-connector-java-5.1.18-bin.jar"/>
+        </jar>
+    </target>
+</project>

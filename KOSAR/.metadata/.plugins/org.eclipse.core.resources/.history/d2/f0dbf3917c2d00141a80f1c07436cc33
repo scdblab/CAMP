@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    	<property name="hibernate.dialect.Dialect">org.hibernate.dialect.OracleDialect</property> 
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:cosar/gocosar@//10.0.0.195:1521/ORCL</property>
+        <property name="hibernate.connection.username">cosar</property>
+        <property name="hibernate.connection.password">gocosar</property>  
+		<property name="show_sql">true</property>
+		<property name="hibernate.connection.autocommit">true</property> 
+        <property name="hibernate.connection.pool_size">10</property>
+        <mapping class="hibernate.entities.User"/>
+        <mapping class="hibernate.entities.Resource"/>
+        <mapping class="hibernate.entities.Manipulation"/>
+        <mapping class="hibernate.entities.Friendship"/>
+        <mapping class="hibernate.entities.Invitation"/>
+    </session-factory>
+</hibernate-configuration>

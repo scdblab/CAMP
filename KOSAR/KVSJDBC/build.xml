@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="KVSJDBC">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../../Program Files/eclipse"/>
+    <property name="KosarWebserver.location" value="../KosarWebserver"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="KosarWebserver.classpath">
+        <pathelement location="${KosarWebserver.location}/bin"/>
+    </path>
+    <path id="KVSJDBC.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="../BG/lib/ojdbc6.jar"/>
+        <pathelement location="lib/jsqlparser.jar"/>
+        <pathelement location="lib/jsqlparser-0.8.6.jar"/>
+        <pathelement location="lib/log4j-1.2.15.jar"/>
+        <path refid="KosarWebserver.classpath"/>
+        <pathelement location="lib/mysql-connector-java-5.1.18-bin.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall">
+        <ant antfile="build.xml" dir="${KosarWebserver.location}" inheritAll="false" target="clean"/>
+    </target>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects">
+        <ant antfile="build.xml" dir="${KosarWebserver.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="KVSJDBC.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="BinaryHeap">
+        <java classname="com.mitrallc.kosar.BinaryHeap" failonerror="true" fork="yes">
+            <classpath refid="KVSJDBC.classpath"/>
+        </java>
+    </target>
+    <target name="HelloWorld">
+        <java classname="com.mitrallc.kosar.HelloWorld" failonerror="true" fork="yes">
+            <classpath refid="KVSJDBC.classpath"/>
+        </java>
+    </target>
+    <target name="kosar">
+        <java classname="com.mitrallc.kosar.kosar" failonerror="true" fork="yes">
+            <classpath refid="KVSJDBC.classpath"/>
+        </java>
+    </target>
+    <target name="KosarSoloClient (1)">
+        <java classname="com.mitrallc.UnitTest.KosarSoloClient" failonerror="true" fork="yes">
+            <classpath refid="KVSJDBC.classpath"/>
+        </java>
+    </target>
+    <target name="LRU">
+        <java classname="com.mitrallc.kosar.LRU" failonerror="true" fork="yes">
+            <classpath refid="KVSJDBC.classpath"/>
+        </java>
+    </target>
+    <target name="MyHttpServer">
+        <java classname="com.mitrallc.webserver.MyHttpServer" failonerror="true" fork="yes">
+            <classpath refid="KVSJDBC.classpath"/>
+        </java>
+    </target>
+    <target name="MySQLOptimizeTriggers">
+        <java classname="com.mitrallc.mysqltrig.MySQLOptimizeTriggers" failonerror="true" fork="yes">
+            <classpath refid="KVSJDBC.classpath"/>
+        </java>
+    </target>
+    <target name="MySQLQueryToTrigger (1)">
+        <java classname="com.mitrallc.mysqltrig.MySQLQueryToTrigger" failonerror="true" fork="yes">
+            <classpath refid="KVSJDBC.classpath"/>
+        </java>
+    </target>
+    <target name="MySQLQueryToTrigger">
+        <java classname="com.mitrallc.mysqltrig.MySQLQueryToTrigger" failonerror="true" fork="yes">
+            <classpath refid="KVSJDBC.classpath"/>
+        </java>
+    </target>
+    <target name="OracleQueryToTrigger">
+        <java classname="com.mitrallc.sqltrig.OracleQueryToTrigger" failonerror="true" fork="yes">
+            <classpath refid="KVSJDBC.classpath"/>
+        </java>
+    </target>
+    <target name="QueryToTrigger (2)">
+        <java classname="com.mitrallc.sqltrig.QueryToTrigger" failonerror="true" fork="yes">
+            <classpath refid="KVSJDBC.classpath"/>
+        </java>
+    </target>
+    <target name="QueryToTrigger">
+        <java classname="src.com.mitrallc.sqltrig.QueryToTrigger" failonerror="true" fork="yes">
+            <classpath refid="KVSJDBC.classpath"/>
+        </java>
+    </target>
+    <target name="ReplacementTechnique">
+        <java classname="com.mitrallc.kosar.ReplacementTechnique" failonerror="true" fork="yes">
+            <classpath refid="KVSJDBC.classpath"/>
+        </java>
+    </target>
+    <target name="ReplacementTest">
+        <java classname="com.mitrallc.UnitTest.ReplacementTest" failonerror="true" fork="yes">
+            <jvmarg line="-Xmx500M"/>
+            <classpath refid="KVSJDBC.classpath"/>
+        </java>
+    </target>
+    <target name="TestImplementation (1)">
+        <java classname="com.mitrallc.UnitTest.TestImplementation" failonerror="true" fork="yes">
+            <classpath refid="KVSJDBC.classpath"/>
+        </java>
+    </target>
+</project>
