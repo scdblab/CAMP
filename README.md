@@ -10,7 +10,7 @@ Shahram Ghandeharizadeh, Sandy Irani, Jenny Lam, and Jason Yap. 2014. CAMP: a co
 ```
 @inproceedings{10.1145/2663165.2663317,
 author = {Ghandeharizadeh, Shahram and Irani, Sandy and Lam, Jenny and Yap, Jason},
-title = {CAMP: a cost adaptive multi-queue eviction policy for key-value stores},
+title = {{CAMP: A Cost Adaptive Multi-Queue Eviction Policy for Key-Value Stores}},
 year = {2014},
 isbn = {9781450327855},
 publisher = {Association for Computing Machinery},
